@@ -149,6 +149,110 @@ int main(){
         printf("Atributo: Super Poder - Carta 2 venceu!\n");
     }
 
+    //Menu interativo pra escolha dos atributos;
+int opcao, opcao2;
+
+printf("\nEscolha o atributo para comparação:\n");
+printf("1. População\n");
+printf("2. Área\n");
+printf("3. PIB\n");
+printf("4. Números de pontos turísticos\n");
+printf("5. Densidade Populacional\n");
+
+printf("Digite a opção desejada: ");
+scanf("%d", &opcao);
+
+
+//Comparação do primiro atributo escolhido;////////////////
+
+double atributo1_carta1 = 0, atributo1_carta2 = 0;
+double atributo2_carta1 = 0, atributo2_carta2 = 0;
+
+switch(opcao){
+
+    case 1:
+
+    atributo1_carta1 = (double) populacao1;
+    atributo1_carta2 = (double) populacao2;
+    printf("Comparação da População:\n");
+    printf("Carta 1 -  %s (%s): %lu habitantes\n", nomeDaCidade1, estado1, populacao1);
+    printf("Carta 2 - %s (%s): %lu habitantes\n", nomeDaCidade2, estado2, populacao2);
+    if(populacao1 > populacao2){
+        printf("Carta 1 venceu!! A cidade com maior população é %s.\n", nomeDaCidade1);
+    }else if(populacao1 < populacao2){
+        printf("Carta 2 venceu!! A cidade com maior população é %s.\n", nomeDaCidade2);
+    }else{
+        printf("Empate! Ambas as cartas têm a quantidade de população. ");
+    }
+    break;
+
+    case 2: 
+
+    atributo1_carta1 = (double) areakm1;
+    atributo1_carta2 = (double) areakm2;
+    printf("Comparação da Área:\n");
+    printf("Carta 1 - %s (%s): %.2f km\n", nomeDaCidade1, estado1, areakm1);
+    printf("Carta 2 - %s (%s): %.2f km\n", nomeDaCidade2, estado2, areakm2);
+    if(areakm1 > areakm2){
+        printf("Carta 1 venceu!!A cidade com maior área é %s.\n", nomeDaCidade1);
+    }else if(areakm1 < areakm2){
+        printf("Carta 2 venceu!!A cidade com maior área é %s\n", nomeDaCidade2);
+    }else{
+        printf("Empate! Ambas têm a mesma área.\n");
+    }
+    break;
+
+
+    case 3:
+
+    atributo1_carta1 = (double) pib1;
+    atributo1_carta2 = (double) pib2;
+    printf("Comparação do PIB:\n");
+    printf("Carta 1 - %s (%s): %.2f bilhões\n", nomeDaCidade1, estado1, pib1);
+    printf("Carta 2 - %s (%s): %.2f bilhões\n", nomeDaCidade2, estado2, pib2);
+    if(pib1 > pib2){
+        printf("Carta 1 venceu!!A cidade com maior PIB é %s.\n", nomeDaCidade1);
+    }else if(pib1 < pib2){
+        printf("Carta 2 venceu!!A cidade com maior PIB é %s.\n", nomeDaCidade2);
+    }else{
+        printf("Empate!! Ambas têm o mesmo PIB.\n");
+    }
+    break;
+
+    case 4:
+    atributo1_carta1 = (double) numeroPontosTuristicos1;
+    atributo1_carta2 = (double) numeroPontosTuristicos2;
+    printf("Comparação dos Números de pontos turísticos:\n");
+    printf("Carta 1 - %s (%s): %d pontos turísticos\n", nomeDaCidade1, estado1, numeroPontosTuristicos1);
+    printf("Carta 2 - %s (%s): %d pontos turísticos\n", nomeDaCidade2, estado2, numeroPontosTuristicos2);
+    if(numeroPontosTuristicos1 > numeroPontosTuristicos2){
+        printf("Carta 1 venceu!!A cidade com maior ponto turísto é %s.\n", nomeDaCidade1);
+    }else if(numeroPontosTuristicos1 < numeroPontosTuristicos2){
+        printf("Carta 2 venceu!!A cidade com maior ponto turístico é %s.\n", nomeDaCidade2);
+    }else{
+        printf("Empate!!Ambas as têm a mesma quantidade de pontos turísticos.\n");
+    }
+    break;
+
+    case 5:
+    atributo1_carta1 = (double) densidade1;
+    atributo1_carta2 = (double) densidade2;
+    printf("Comparação da Densidade Populacional:\n");
+    printf("Carta 1 - %s : %.2f habitantes/km\n", nomeDaCidade1, densidade1);
+    printf("Carta 2 - %s : %.2f habitantes/km\n", nomeDaCidade2, densidade2);
+    if(densidade1 < densidade2){
+        printf("Carta 1 venceu!!A cidade com menor densidade populacional é %s.\n", nomeDaCidade1);
+    }else if(densidade1 > densidade2){
+        printf("Carta 2 venceu!!A cidade com menor densidade populacional é %s.\n", nomeDaCidade2);
+    }else{
+        printf("Empate!! Ambas as cidades têm a mesma densidade populacional.\n");
+    }
+    break;
+    default:
+    printf("Opção inválida.!");
+
+}
+
     return 0;
 
 }
